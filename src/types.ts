@@ -1,3 +1,13 @@
+// Extends Express.Request so req.userId is available in all user-facing routes
+// after the requireUserId middleware runs.
+declare global {
+  namespace Express {
+    interface Request {
+      userId?: string;
+    }
+  }
+}
+
 export interface Product {
   id: string;
   name: string;
