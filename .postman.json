@@ -1,0 +1,45 @@
+{
+  "version": "0.1",
+  "project": {
+    "name": "Ecommerce Store Backend",
+    "baseUrl": "http://localhost:3000",
+    "port": 3000,
+    "createdAt": "2026-06-12T00:00:00Z"
+  },
+  "default": {
+    "workspace": "main",
+    "collection": "api-tests",
+    "environment": "local"
+  },
+  "workspaces": {
+    "main": {
+      "id": "66e7b18b-3293-44be-9c92-812c9e8662a8",
+      "name": "Ecommerce Store Backend",
+      "type": "personal",
+      "description": "API testing workspace for the ecommerce store backend"
+    }
+  },
+  "collections": {
+    "api-tests": {
+      "id": "7e8c260b-1576-440a-9bf5-e4f75a1e78ff",
+      "uid": "45891817-7e8c260b-1576-440a-9bf5-e4f75a1e78ff",
+      "name": "Ecommerce Store API",
+      "workspace": "main",
+      "description": "Complete API test suite for the ecommerce store backend",
+      "requestCount": 10
+    }
+  },
+  "environments": {
+    "local": {
+      "id": "d785d787-c542-4f94-a17b-14cdce51f59c",
+      "uid": "45891817-d785d787-c542-4f94-a17b-14cdce51f59c",
+      "name": "Local Development",
+      "workspace": "main",
+      "variables": {
+        "API_URL": "http://localhost:3000",
+        "USER_ID": "user-1",
+        "ADMIN_KEY": "***"
+      }
+    }
+  }
+}
