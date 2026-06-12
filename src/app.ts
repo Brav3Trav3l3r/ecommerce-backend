@@ -44,12 +44,13 @@ export function createApp() {
   app.use('/api/admin', adminRouter);
 
   // Global error handler — catches AppError and unexpected errors uniformly
-  app.use((err: unknown, _req: Request, res: Response, _next: NextFunction) => {
+  app.use((err: unknown, req: Request, res: Response, _next: NextFunction) => {
     if (err instanceof AppError) {
+      console.error(`[ERROR] ${req.method} ${req.path} → ${err.statusCode} | ${err.code}: ${err.message}`);
       res.status(err.statusCode).json({ error: { code: err.code, message: err.message } });
       return;
     }
-    console.error(err);
+    console.error(`[ERROR] ${req.method} ${req.path} → 500 | INTERNAL_ERROR:`, err);
     res.status(500).json({ error: { code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' } });
   });
 
