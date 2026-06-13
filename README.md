@@ -36,6 +36,7 @@ PORT=3000
 N_TH_ORDER=5
 DISCOUNT_PERCENT=10
 ADMIN_KEY=admin-secret
+ALLOWED_ORIGIN=http://localhost:5173
 ```
 
 | Variable           | Description                                              | Default        |
@@ -44,6 +45,7 @@ ADMIN_KEY=admin-secret
 | `N_TH_ORDER`       | Every nth order triggers a discount coupon               | `5`            |
 | `DISCOUNT_PERCENT` | Percentage discount applied by generated coupons         | `10`           |
 | `ADMIN_KEY`        | Secret key required in `X-Admin-Key` header for admin routes | `admin-secret` |
+| `ALLOWED_ORIGIN`   | Frontend origin allowed by CORS                          | `http://localhost:5173` |
 
 ### Run (development)
 

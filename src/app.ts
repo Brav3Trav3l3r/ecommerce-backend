@@ -1,4 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors';
 import { AppError } from './errors';
 import cartRouter from './routes/cart';
 import checkoutRouter from './routes/checkout';
@@ -27,6 +28,7 @@ export function createApp() {
   const app = express();
 
   app.use(express.json());
+  app.use(cors({ origin: process.env.ALLOWED_ORIGIN ?? 'http://localhost:5173' }));
 
   // Validate X-User-Id and attach it to req.userId for downstream handlers
   const requireUserId = (req: Request, res: Response, next: NextFunction) => {
