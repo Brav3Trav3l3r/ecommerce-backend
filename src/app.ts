@@ -4,6 +4,7 @@ import cartRouter from './routes/cart';
 import checkoutRouter from './routes/checkout';
 import discountRouter from './routes/discount';
 import adminRouter from './routes/admin';
+import productsRouter from './routes/products';
 
 /**
  * Creates and configures the Express application.
@@ -38,6 +39,7 @@ export function createApp() {
     next();
   };
 
+  app.use('/api/products', productsRouter);
   app.use('/api/cart', requireUserId, cartRouter);
   app.use('/api/checkout', requireUserId, checkoutRouter);
   app.use('/api/discount', requireUserId, discountRouter);

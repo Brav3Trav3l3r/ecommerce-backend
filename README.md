@@ -77,6 +77,25 @@ All 40 unit tests cover the four service modules: `cartService`, `checkoutServic
 All user-facing routes require the `X-User-Id` header to identify the caller.  
 Admin routes require the `X-Admin-Key` header.
 
+### Products
+
+| Method | Endpoint        | Description              |
+|--------|-----------------|--------------------------|
+| `GET`  | `/api/products` | List all available products |
+
+**Response:**
+```json
+{
+  "products": [
+    { "id": "p1", "name": "T-Shirt", "price": 29.99, "description": "..." }
+  ]
+}
+```
+
+No authentication required.
+
+---
+
 ### Cart
 
 | Method   | Endpoint                        | Description                        |
